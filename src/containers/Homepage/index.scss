@@ -1,0 +1,94 @@
+.homepage {
+  left: 0;
+  top: 5vh;
+  height: 600px;
+  display: flex;
+  position: relative;
+  width: calc(100% - 100px);
+  background-color: rgba($color: blue, $alpha: 0.2);
+  .galleryWrapper1 {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    font-size: 10px;
+    height: 100%;
+    margin-left: -50px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 99;
+    .galleryWrapper2 {
+      height: calc(100% + 40px);
+      width: 100%;
+      overflow-x: scroll;
+      padding-bottom: 55px;
+      padding-top: 15px;
+      display: flex;
+      &:hover {
+        background-color: rgba($color: black, $alpha: 0);
+      }
+      .galleryItems {
+        cursor: pointer;
+        background-color: rgba($color: green, $alpha: 0.2);
+        height: 100%;
+        margin-right: 25px;
+        margin-left: 25px;
+        flex: 0 0 400px;
+        display: flex;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        position: relative;
+        transition: all 0.5s;
+        &.blank {
+          background-color: transparent;
+        }
+        &.active {
+          flex: 0 0 1200px;
+          .galleryItem {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            transition: all 0.5s;
+            &:first-child {
+              transition: all 0.5s;
+              display: flex;
+            }
+            &:nth-child(2) {
+              transition: all 0.5s;
+              -webkit-border-radius: 0;
+              -moz-border-radius: 0;
+              border-radius: 0;
+              margin-left: 400px;
+              display: flex;
+            }
+            &:last-child {
+              transition: all 0.5s;
+              display: flex;
+              border-radius: 0 50px 50px 0;
+              margin-left: 800px;
+            }
+          }
+        }
+        .galleryItem {
+          padding: 50px;
+          position: absolute;
+          width: 400px;
+          height: inherit;
+          z-index: 10;
+          -webkit-border-radius: inherit;
+          -moz-border-radius: inherit;
+          border-radius: inherit;
+          background-color: white;
+          transition: all 0.5s;
+          &:first-child {
+            transition: all 0.5s;
+            z-index: 0;
+          }
+          &:last-child {
+            transition: all 0.5s;
+            z-index: 0;
+          }
+        }
+      }
+    }
+  }
+}
